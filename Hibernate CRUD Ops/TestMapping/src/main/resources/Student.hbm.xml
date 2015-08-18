@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.webonise.main.Student" table="info">
+		<id name="rollNo" type="int" column="roll_no">
+			<generator class="assigned" />
+		</id>
+		<property name="name" column="name" />
+		<property name="dob" type="date" column="dob" />
+		<property name="phoneNum" column="ph_num" />
+	</class>
+</hibernate-mapping>

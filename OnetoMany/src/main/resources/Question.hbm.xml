@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.webonise.dataObject.Question" table="question">
+		<id name="questionId" type="int" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="question" column="ques" />
+		<set name="answers" cascade="all">
+			<key column="q_id"></key>
+			<one-to-many class="com.webonise.dataObject.Answer" />
+		</set>
+	</class>
+
+	<class name="com.webonise.dataObject.Answer" table="answer">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="answer" column="ans"></property>
+		<property name="postedBy" column="post_by"></property>
+	</class>
+</hibernate-mapping>
